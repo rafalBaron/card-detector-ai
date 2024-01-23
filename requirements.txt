@@ -1,0 +1,11 @@
+Flask>=2.2.3
+opencv-python>=4.8
+tensorflow>=2.15
+pillow>=9.4
+torch>=2.1.1
+ultralytics>=8.1.2
+supervision>=0.17.1
+roboflow>=1.1.16
+imutils>=0.5.4
+imageio>=2.33.1
+omegaconf>=2.3.0

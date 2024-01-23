@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <title>Detekcja kart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="/"><img src="/static/icon.png" /></a>
+        </div>
+        <div class="logoName">Detekcja Kart</div>
+        <div class="logoName">Rafał Baron</div>
+    </div>
+    <div class="layout">
+        <div class="fileForm">
+            <div class="left">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div id="choose">
+                        <input type="file" name="file" id="fileInput">
+                        <label for="fileInput" class="custom-upload-btn">Wybierz plik</label>
+                        <label id="fileLabel"></label>
+                    </div>
+                    <div id="send">
+                        <div class="prop">
+                            <label for="mySlider1">Confidence</label>
+                            <p><span id="sliderValue1">0.40</span></p>
+                            <input type="range" id="mySlider1" name="mySlider1" min="0" max="1" step="0.01" value="0.40">
+
+
+                            <label for="mySlider2" id="iou">IoU</label>
+                            <p><span id="sliderValue2">0.50</span></p>
+                            <input type="range" id="mySlider2" name="mySlider2" min="0" max="1" step="0.01" value="0.50">
+                        </div>
+                        <input type="submit" value="Upload" id="generuj" onclick="loading();">
+                        <label for="generuj" class="custom-upload-btn-send">Generuj</label>
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                {% if not output_filename %}
+                <h1 id="duperele">Prześlij swój film, na którym są karty do gry. Po analizie będziesz mógł go pobrać wraz z dodaną detekcją!</h1>
+                {% endif %}
+                <h1 id="analizowany">Trwa analiza!</h1>
+                <div id="loading"></div>
+                {% if output_filename %}
+                <h1 id="przeanalizowany">Przeanalizowany film jest gotowy!</h1>
+                <a class="generatedButton " href="/download">Pobierz film</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="result">
+            <h1><span style="color: #45a049;">🢃___</span>  Poniżej pojawią się karty rozpoznane na filmie! <span style="color: #45a049;">___🢃</span></h1>
+            <div class="resultContent">
+            {% for item in filtered %}
+                <img src="/static/cards/{{item}}.png" />
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+    <script type="text/javascript">
+        // <![CDATA[
+        function loading() {
+            $("#duperele").hide();
+            $("#analizowany").show();
+            $("#loading").show();
+        }
+        // ]]>
+        document.getElementById('fileInput').onchange = function () {
+            document.getElementById('fileLabel').textContent = this.value.split('\\').pop();
+        };
+
+        var slider = document.getElementById("mySlider1");
+        var output = document.getElementById("sliderValue1");
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        };
+
+        var slider1 = document.getElementById("mySlider2");
+        var output1 = document.getElementById("sliderValue2");
+        slider1.oninput = function () {
+            output1.innerHTML = this.value;
+        };
+
+
+    </script>
+</body>
+</html>

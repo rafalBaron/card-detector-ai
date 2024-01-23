@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+.logo > a > img {
+    height: 80px;
+    width: 100px;
+}
+
+div#loading {
+    width: 64px;
+    height: 64px;
+    display: none;
+    background: url(/static/loading.gif) no-repeat;
+    cursor: wait;
+}
+
+.logoName {
+    margin-left: 50px;
+}
+
+.header {
+    display: flex;
+    background-color: #1B262C;
+    color: white;
+    min-height: 2vh;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5em;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap:wrap;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fileForm {
+    display:flex;
+}
+
+.left {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: #0F4C75;
+    font-family: 'Ubuntu', sans-serif;
+    width: 66%;
+}
+
+    .left > h1 {
+        color: #BBE1FA;
+        font-size: 2.2em;
+    }
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4em;
+    background-color: #0F4C75;
+    font-family: 'Ubuntu', sans-serif;
+    width:33%;
+}
+
+#duperele {
+    color:white;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+#analizowany {
+    color: #45a049;
+    font-size: 1.7em;
+    display: none;
+    text-align: center;
+}
+
+#przeanalizowany {
+    color: #45a049;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+#fileLabel {
+    background-color: #45a049;
+    padding:10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#choose {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-left:100px;
+}
+#send {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+}
+
+#sliderValue1, #sliderValue2 {
+    background-color: #45a049;
+    padding: 5px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+}
+
+
+    .left > form {
+        display: flex;
+        gap: 120px;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+input[type="range"] {
+    cursor: pointer;
+}
+
+
+#width, #height {
+    background-color: white;
+    color: #1B262C;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.4em;
+    text-align: center;
+    font-weight: 700;
+    width: 150px;
+}
+
+.prop {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    background-color: #BBE1FA;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    gap: 5px;
+}
+
+.prop > p {
+    text-align: center;
+}
+
+#labelDim {
+    font-size: 1.2em;
+    color: #BBE1FA;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    background-color: #0F4C75;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 300px;
+    color: white;
+}
+
+ .resultContent > img {
+    width:120px;
+    height:180px;
+}
+
+ .resultContent {
+     display: flex;
+     gap: 10px;
+     flex-wrap:wrap;
+     justify-content:center;
+ }
+
+input[type=file] {
+    display: none;
+}
+
+input[type=submit] {
+    display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.custom-upload-btn,
+.custom-upload-btn-send {
+    background-color: #1B262C;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.7em;
+    text-align: center;
+    width:200px;
+}
+
+
+.custom-upload-btn-send {
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+    .custom-upload-btn:hover, .custom-upload-btn-send:hover {
+        background-color: #45a049;
+    }
+
+.generatedButton {
+    background-color: #45a049;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.7em;
+    text-align: center;
+    width: 200px;
+}
+
+@media (max-width: 600px) {
+    .layout {
+        flex-direction: column;
+    }
+}
