@@ -2,7 +2,7 @@
 <p>Simple website (not responsive) for cards detection and classification from uploaded video. Project made with Roboflow, ultralytics and YOLOv8. </p>
 <h2>Load dataset and model</h2>
 
-```
+``` python
 !pip install ultralytics
 from ultralytics import YOLO
 import os
