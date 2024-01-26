@@ -13,11 +13,11 @@ display.clear_output()
 !yolo checks
 ```
 
-Install Roboflow and load dataset
+Install Roboflow and load dataset (https://universe.roboflow.com/augmented-startups/playing-cards-ow27d/dataset/4)
 ``` python
 !pip install roboflow
 from roboflow import Roboflow
-rf = Roboflow(api_key="diizX4Cv14C2yoNXKnxj")
+rf = Roboflow(api_key="GENERATED_API_KEY_FROM_ROBOFLOW_ACCOUNT")
 project = rf.workspace("rafalbaron").project("cardsdetection-ekd3m")
 dataset = project.version(4).download("yolov8")
 ```
@@ -30,4 +30,16 @@ Train your chosen YOLOv8 model with loaded dataset and desired parameters. Make 
 ```
 
 <h2>Validate</h2>
+
+Validate using best weights
+``` python
+!yolo task=detect mode=val model=/content/runs/detect/train/weights/best.pt data={dataset.location}/data.yaml
+```
+
 <h2>Predict</h2>
+
+Test how model predicts your images
+``` python
+!yolo task=detect mode=predict model=/content/runs/detect/train/weights/best.pt conf=0.6 source=/path/to/your/image
+```
+
