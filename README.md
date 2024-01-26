@@ -44,4 +44,4 @@ Test how model predicts your images
 ```
 
 <h2>Generated output video</h2>
-![](output.gif)
+![](/output.gif)
