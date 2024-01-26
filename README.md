@@ -28,5 +28,6 @@ Train your chosen YOLOv8 model with loaded dataset and desired parameters. Make 
 ``` python
 !yolo task=detect mode=train model=yolov8n.pt data={dataset.location}/data.yaml epochs=30 imgsz=640
 ```
+
 <h2>Validate</h2>
 <h2>Predict</h2>
