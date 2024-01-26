@@ -44,4 +44,4 @@ Test how model predicts your images
 ```
 
 <h2>Generated output video</h2>
-![Output video](https://github.com/rafalBaron/card-detector-ai/output.gif)
+<img src="https://github.com/rafalBaron/card-detector-ai/output.gif" width="40" height="40" />
