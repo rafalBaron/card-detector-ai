@@ -43,3 +43,5 @@ Test how model predicts your images
 !yolo task=detect mode=predict model=/content/runs/detect/train/weights/best.pt conf=0.6 source=/path/to/your/image
 ```
 
+<h2>Generated output video</h2>
+![](https://github.com/rafalBaron/card-detector-ai/output.gif)
