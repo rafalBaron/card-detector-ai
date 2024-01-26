@@ -49,7 +49,9 @@ Test how model predicts your images
 
 <h2>Website and uploading</h2>
 
-![]()
+![](https://github.com/rafalBaron/card-detector-ai/blob/main/brave_SzkTjUO0nS.gif)
+
+![](https://github.com/rafalBaron/card-detector-ai/blob/main/brave_i6dDPYtze1.gif)
 
 <h2>Generated output video</h2>
 
